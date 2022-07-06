@@ -1,0 +1,165 @@
+@import "reset";
+@import "mixin";
+@import "utility";
+header {
+  transition: 1s;
+}
+
+.wrapper {
+  display: flex;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  .left-box {
+    background-color: $accent;
+    h1 {
+      font-size: 8rem;
+      letter-spacing: 1.1rem;
+      line-height: 5.5rem;
+      color: white;
+      text-transform: uppercase;
+      // text-align: center;
+      font-family: "League Gothic", sans-serif;
+      &::first-line {
+        font-size: 6rem;
+        letter-spacing: 0.6rem;
+      }
+    }
+    span {
+      align-self: flex-start;
+      color: white;
+      line-height: 5rem;
+    }
+    p {
+      font-size: 1.5vw;
+      color: white;
+      line-height: 1.6rem;
+      &::first-line {
+        font-weight: 800;
+      }
+    }
+  }
+  .right-box {
+    background-color: $primary;
+    overflow: hidden;
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    .left-box {
+      @include height-width(100%, 50%);
+    }
+    .right-box {
+      @include height-width(100%, 50%);
+    }
+    .hire {
+      display: none;
+    }
+  }
+}
+
+.hire {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%) rotate(-35deg);
+  font-size: 1.75rem;
+  text-align: center;
+  z-index: 5;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $primary;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .sm-img {
+    height: 60%;
+    margin-top: auto;
+  }
+}
+
+.black-box {
+  background-color: $dark;
+  height: 20vh;
+  overflow: hidden;
+  width: 100%;
+  img {
+    height: 6rem;
+  }
+}
+
+.lead {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lead + p {
+  font-size: 1.025rem;
+  flex-basis: 70%;
+}
+
+.card-group {
+  // display: flex;
+  gap: 1rem;
+  .card {
+    // box-shadow: 20px 20px 10px rgb(197, 197, 197);
+    flex-basis: 33%;
+    background-color: white;
+    .card-header {
+      i {
+        font-size: 3.5rem;
+      }
+    }
+    .card-body {
+      .card-heading {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        // color: $primary;
+        border-left: 6px solid $primary;
+      }
+    }
+  }
+}
+
+.card-heading + p {
+  font-size: 1.025rem;
+  line-height: 1.5rem;
+}
+
+.panel-group {
+  background-color: white;
+  gap: 1rem;
+  .panel {
+    flex-basis: 50%;
+    // background-color: red;
+    img {
+      max-width: 100%;
+    }
+    p {
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      ~ span {
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        display: inline-block;
+      }
+      & + span {
+        margin-right: 2rem;
+      }
+      & ~ span:last-child {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+section {
+  overflow: hidden;
+}
